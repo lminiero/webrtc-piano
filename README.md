@@ -77,7 +77,7 @@ After you start Janus and launch the gstreamer script, your Jack graph should lo
 
 As you can see in the screenshot above, the gstreamer pipeline should be ready to receive incoming audio via Jack, while the Lua script in Janus (which registers as "Janus WebRTC Piano client") should automatically connect to the MIDI through node via ALSA. I chose to have it connected there to make it easier to switch instruments dynamically, but you're of course free to edit the Lua script to implement a different behaviour, or change the connections to your liking after the fact.
 
-After that, it should be straightforward to figure out the next steps: all you need to do is launch whatever you want to be able to receive the MIDI input and render it to audio, and connect things accordingly. In the screenshot below, I used a yoshimi instance for the purpose, but it should work with anything else.
+After that, it should be straightforward to figure out the next steps: all you need to do is launch whatever you want to be able to receive the MIDI input and render it to audio, and connect things accordingly. In the screenshot below, I used a yoshimi instance for the purpose, but it should work with anything else. In case the application you want to send MIDI to doesn't support ALSA, but only Jack, then you'll have to use something like [a2jmidid](https://github.com/linuxaudio/a2jmidid/) for bridging them.
 
 ![Hooking a Jack application](images/image2.png)
 
